@@ -3,12 +3,18 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./autoscroll.nix
       ./packages.nix
+      ./hardware-configuration.nix
+      ./mmb-autoscroll.nix
     ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  services.mmb-autoscroll.enable = true;  
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
 #  fonts.fontconfig = {
 #    enable = true;
 #    antialias = true;
@@ -31,27 +37,13 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.new_feature;
   };
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelModules = [ "i2c-dev" "i2c-i801" ];
-  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
+ 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  networking.networkmanager.insertNameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-    "2606:4700:4700::1111"
-    "2606:4700:4700::1001"
-  ];
-#  networking.networkmanager.dns = "none";
 
   time.timeZone = "Europe/Lisbon";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "pt_PT.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_PT.UTF-8";
@@ -65,27 +57,17 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  services.xserver.enable = true;
-  programs.gpaste.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   services.xserver.xkb = {
     layout = "pt";
     variant = "";
   };
-  
-  services.libinput = {
-  enable = true;
-  mouse = {
-      scrollMethod = "button";   
-      scrollButton = 274;      
-    };
-  };
 
   console.keyMap = "pt-latin1";
 
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -102,14 +84,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  services.flatpak.enable = true;
-  programs.nix-ld.enable = true;
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };  
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "26.05"; 
+  system.stateVersion = "26.05";
 
 }

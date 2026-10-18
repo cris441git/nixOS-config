@@ -10,30 +10,18 @@
    htop
    ncdu
    gpaste
-   i2c-tools
-   pciutils
    aria2
  ];
 
  users.users.cris441.packages = with pkgs;  [
    vesktop
-   vlc
-   kdePackages.ark
-   p7zip
-   rpcs3
-   alacarte
-   mint-y-icons
-   protonplus
+   rewaita
    lutris
-   luanti
-   uget
-   qbittorrent
-   stremio-linux-shell
-   vinegar
-   wine-staging
-   prismlauncher
-   the-powder-toy
-   mindustry
-   osu-lazer-bin
+   gamescope
+   sc-controller
+   protonplus
+   papirus-icon-theme
+   gnome-extension-manager
+   gnome-tweaks
  ];
 }
