@@ -7,6 +7,7 @@
  environment.systemPackages = with pkgs;  [
    fastfetch
    unrar
+   labwc
    htop
    ncdu
    gpaste
@@ -21,7 +22,5 @@
    sc-controller
    protonplus
    papirus-icon-theme
-   gnome-extension-manager
-   gnome-tweaks
  ];
 }

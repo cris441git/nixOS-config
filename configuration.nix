@@ -57,8 +57,8 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
 
   services.xserver.xkb = {
     layout = "pt";
