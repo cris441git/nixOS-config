@@ -18,6 +18,7 @@
  users.users.cris441.packages = with pkgs;  [
    vesktop
    lutris
+   zapzap
    gamescope
    sc-controller
    protonplus
