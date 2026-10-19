@@ -15,7 +15,7 @@
  users.users.cris441.packages = with pkgs;  [
    vesktop
    lutris
-   kdePackages.plasma-browser-intergration
+   kdePackages.plasma-browser-integration
    kdePackages.kate # install only for user
    gamescope
    sc-controller
@@ -33,6 +33,7 @@
    kate
    akonadi
    elisa
+   merkuko
    kwalletmanager
  ];
 }
