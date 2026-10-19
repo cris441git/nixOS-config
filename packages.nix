@@ -23,7 +23,7 @@
    papirus-icon-theme
  ];
 
- environment.kde.excludePackages = with pkgs.kdePackages; [
+ environment.plasma6.excludePackages = with pkgs.kdePackages; [
    kmail
    ktnef
    gwenview
@@ -31,7 +31,6 @@
    kontact
    qrca
    kate
-   kwrite
    akonadi
    elisa
    kwalletmanager
