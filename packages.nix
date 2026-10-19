@@ -3,6 +3,7 @@
 {
  programs.steam.enable = true;
  programs.firefox.enable = true;
+ programs.kde-pim.enable = false;
 
  environment.systemPackages = with pkgs;  [
    fastfetch
@@ -10,14 +11,13 @@
    htop
    ncdu
    git
+   nil
    aria2
  ];
 
  users.users.cris441.packages = with pkgs;  [
    vesktop
    lutris
-   kdePackages.plasma-browser-integration
-   kdePackages.kate # install only for user
    gamescope
    sc-controller
    protonplus
@@ -25,16 +25,10 @@
  ];
 
  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-   kmail
-   ktnef
    gwenview
    okular
-   kontact
    qrca
-   kate
-   akonadi
    elisa
-   merkuro
    kwalletmanager
  ];
 }
