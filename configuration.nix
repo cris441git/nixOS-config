@@ -3,41 +3,15 @@
 {
   imports =
     [
-      ./packages.nix
       ./hardware-configuration.nix
-      ./mmb-autoscroll.nix
+      ./packages.nix
     ];
-  
-  services.mmb-autoscroll.enable = true;  
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  
-#  fonts.fontconfig = {
-#    enable = true;
-#    antialias = true;
-#    includeUserConf = false;  
-#    subpixel.rgba = "none";
-#    subpixel.lcdfilter = "none"; 
-#    hinting.enable = false;
-#  };
 
-  
-  hardware.graphics.enable32Bit = true;
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.new_feature;
-  };
- 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
@@ -57,8 +31,11 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
+  services.xserver.enable = false;
+
+  services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.lxqt.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
     layout = "pt";
