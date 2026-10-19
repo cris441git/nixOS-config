@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, inputs, ...}:
 
 {
  programs.steam.enable = true;
@@ -22,6 +22,7 @@
    sc-controller
    protonplus
    papirus-icon-theme
+   inputs.mocktail.packages.${pkgs.system}.default
  ];
 
  environment.plasma6.excludePackages = with pkgs.kdePackages; [
