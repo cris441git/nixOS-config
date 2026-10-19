@@ -9,6 +9,7 @@
    unrar
    htop
    ncdu
+   git
    aria2
  ];
 
@@ -33,7 +34,7 @@
    kate
    akonadi
    elisa
-   merkuko
+   merkuro
    kwalletmanager
  ];
 }
