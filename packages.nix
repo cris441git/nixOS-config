@@ -18,7 +18,13 @@
  users.users.cris441.packages = with pkgs;  [
    vesktop
    lutris
+   krita
+   obs-studio
    zapzap
+   vlc
+   vinegar
+   rpi-imager
+   vscodium
    gamescope
    sc-controller
    protonplus
