@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./hardening.nix
       ./packages.nix
     ];
   nix.settings.experimental-features = [ "flakes" "nix-command" ];

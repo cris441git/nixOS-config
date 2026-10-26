@@ -10,6 +10,8 @@
    unrar
    htop
    ncdu
+   gcc
+   kdePackages.kde-cli-tools
    git
    nil
    aria2
@@ -33,7 +35,6 @@
  ];
 
  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-   gwenview
    okular
    qrca
    elisa
