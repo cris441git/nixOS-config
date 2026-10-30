@@ -2,7 +2,7 @@
 
 {
  programs.steam.enable = true;
- programs.firefox.enable = true;
+ programs.firefox.enable = false;
  programs.kde-pim.enable = false;
 
  environment.systemPackages = with pkgs;  [
@@ -26,6 +26,7 @@
    vlc
    vinegar
    rpi-imager
+   ungoogled-chromium
    vscodium
    gamescope
    sc-controller
