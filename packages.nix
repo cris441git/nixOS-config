@@ -24,7 +24,7 @@
    obs-studio
    zapzap
    vlc
-   qmmp
+   audacious
    vinegar
    rpi-imager
    ungoogled-chromium
