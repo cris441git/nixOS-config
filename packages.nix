@@ -5,6 +5,9 @@
  programs.firefox.enable = false;
  programs.kde-pim.enable = false;
 
+ programs.nix-ld.enable = true;
+ programs.nix-ld.libraries = with pkgs; [];
+
  environment.systemPackages = with pkgs;  [
    fastfetch
    unrar
@@ -24,6 +27,7 @@
    obs-studio
    zapzap
    vlc
+   spotdl
    audacious
    vinegar
    rpi-imager
