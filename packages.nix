@@ -54,14 +54,15 @@
  ];
 
  ## OVERLAY
- final: prev: {
-  audacious-plugins = prev.audacious-plugins.overrideAttrs (old: {
-    postInstall = (old.postInstall or "") + ''
-      install -Dm755 ${./audacious-plugins/discord-rpc.so} \
-        $out/lib/audacious/General/discord-rpc.so
-    '';
-  });
-}
-
+ nixpkgs.overlays = [
+  (final: prev: {
+    audacious-plugins = prev.audacious-plugins.overrideAttrs (old: {
+      postInstall = (old.postInstall or "") + ''
+        install -Dm755 ${./audacious-plugins/discord-rpc.so} \
+          $out/lib/audacious/General/discord-rpc.so
+      '';
+    });
+  })
+ ];
  
 }
