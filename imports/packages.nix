@@ -39,7 +39,6 @@
    vlc
    spotdl
    gajim
-   glowing-bear
    theclicker
    audacious
    vinegar
@@ -68,7 +67,7 @@
     audacious-discord-rpc = final.stdenv.mkDerivation {
       pname = "audacious-discord-rpc";
       version = "prebuilt";
-      src = ./audacious-plugins/discord-rpc.so;
+      src = "${toString ./.}/audacious-plugins/discord-rpc.so";
       dontUnpack = true;
       nativeBuildInputs = [ final.autoPatchelfHook ];
       buildInputs = [
