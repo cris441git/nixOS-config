@@ -3,7 +3,7 @@
 #
 # Usage (configuration.nix):
 #
-#   imports = [ ./mmb-autoscroll/mmb-autoscroll.nix ];
+#   imports = [ ./mmb-autoscroll.nix ];
 #
 #   services.mmb-autoscroll = {
 #     enable = true;
@@ -24,7 +24,7 @@ let
   python = pkgs.python3.withPackages (ps: [ ps.evdev ]);
 
   # Copy the script into the store so it is always the exact file next to this module.
-  script = pkgs.writeText "mmb_autoscroll.py" (builtins.readFile ./mmb_autoscroll.py);
+  script = pkgs.writeText "mmb_autoscroll.py" (builtins.readFile ./scripts/mmb_autoscroll.py);
 
   # Env values must be strings; bools become 1/0 (the script uses int flags).
   toEnv = v:

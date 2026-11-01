@@ -7,6 +7,7 @@
     "kernel.kptr_restrict" = 2;
     "vm.mmap_rnd_bits" = 32;
     "kernel.unprivileged_bpf_disabled" = 1;
+    "kernel.unprivileged_userns_clone" = 1;
     "fs.protected_symlinks" = 1;
     "fs.protected_hardlinks" = 1;
   };
