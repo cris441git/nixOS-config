@@ -38,6 +38,8 @@
    zapzap
    vlc
    spotdl
+   gajim
+   glowing-bear
    theclicker
    audacious
    vinegar
