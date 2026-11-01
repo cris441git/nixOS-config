@@ -1,6 +1,3 @@
-# NixOS module: mmb-autoscroll — Windows-style middle-button autoscroll
-# (evdev grab -> uinput) for Wayland.
-#
 # Usage (configuration.nix):
 #
 #   imports = [ ./mmb-autoscroll.nix ];
@@ -14,8 +11,6 @@
 #       MMB_HORIZONTAL = true;
 #     };
 #   };
-#
-# mmb_autoscroll.py must sit next to this file (it is used unmodified).
 { config, lib, pkgs, ... }:
 
 let
@@ -23,10 +18,8 @@ let
 
   python = pkgs.python3.withPackages (ps: [ ps.evdev ]);
 
-  # Copy the script into the store so it is always the exact file next to this module.
   script = pkgs.writeText "mmb_autoscroll.py" (builtins.readFile ./scripts/mmb_autoscroll.py);
 
-  # Env values must be strings; bools become 1/0 (the script uses int flags).
   toEnv = v:
     if builtins.isBool v then (if v then "1" else "0")
     else toString v;
