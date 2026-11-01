@@ -67,7 +67,7 @@
     audacious-discord-rpc = final.stdenv.mkDerivation {
       pname = "audacious-discord-rpc";
       version = "prebuilt";
-      src = "${toString ./.}/audacious-plugins/discord-rpc.so";
+      src = ../audacious-plugins/discord-rpc.so;
       dontUnpack = true;
       nativeBuildInputs = [ final.autoPatchelfHook ];
       buildInputs = [
