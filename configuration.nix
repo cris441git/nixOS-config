@@ -7,8 +7,11 @@
       ./imports/hardening.nix
       ./imports/packages.nix
     ];
+
+  ## NIX OPTIONS
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
- 
+   
+  ## HARDWARE, BOOT AND KERNEL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -30,9 +33,12 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  ## NETWORKING
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
+  networking.extraHosts = "127.0.0.1 weechat.local";
+ 
+  ## LOCALES
   time.timeZone = "Europe/Lisbon";
 
   i18n.defaultLocale = "pt_PT.UTF-8";
@@ -49,6 +55,7 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
+  ## SERVICES AND SYSTEM CONFIGURATION
   services.xserver.enable = false;
 
   services.displayManager.sddm.enable = true;
@@ -72,15 +79,41 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  
+  services.weechat = {
+    enable = true;
+  };
 
+  programs.screen.screenrc = ''
+    multiuser on
+    acladd cris441 
+    term screen-256color
+  '';
+
+  services.nginx = {
+  enable = true;
+  virtualHosts."weechat.local" = {
+    locations."/" = {
+      root = pkgs.glowing-bear;
+    };
+    locations."/weechat" = {
+      proxyPass = "http://127.0.0.1:9000/;";
+      proxyWebsockets = true;
+    };
+    };
+  };
+
+  ## USER ACCOUNTS
   users.users."cris441" = {
     isNormalUser = true;
     description = "cris441";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" ];
   };
 
+  ## UNFREE REPOSITORY
   nixpkgs.config.allowUnfree = true;
 
+  ## MISC
   system.stateVersion = "26.05";
 
 }
