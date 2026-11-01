@@ -9,7 +9,7 @@
         specialArgs = {inherit inputs; };
         modules = [
            ./configuration.nix
-           ./packages.nix
+           ./imports/packages.nix
         ];
       };
     };
