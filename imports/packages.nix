@@ -15,11 +15,14 @@
    unrar
    htop
    ncdu
+   ghc
+   rustup
    gcc
+   pkg-config
    python3
+   zenity
    wineWow64Packages.stable
    winetricks
-   zenity
    icoutils
    p7zip
    cabextract
@@ -61,33 +64,4 @@
    elisa
    kwalletmanager
  ];
-
- ## OVERLAY
- nixpkgs.overlays = [
-  (final: prev: {
-    audacious-discord-rpc = final.stdenv.mkDerivation {
-      pname = "audacious-discord-rpc";
-      version = "prebuilt";
-      src = ../audacious-plugins/discord-rpc.so;
-      dontUnpack = true;
-      nativeBuildInputs = [ final.autoPatchelfHook ];
-      buildInputs = [
-        final.audacious-bare
-        final.curl
-        final.stdenv.cc.cc.lib
-      ];
-      installPhase = ''
-        install -Dm755 $src $out/lib/audacious/General/discord-rpc.so
-      '';
-    };
-
-    audacious-plugins = prev.audacious-plugins.overrideAttrs (old: {
-      postInstall = (old.postInstall or "") + ''
-        install -Dm755 ${final.audacious-discord-rpc}/lib/audacious/General/discord-rpc.so \
-          $out/lib/audacious/General/discord-rpc.so
-      '';
-    });
-  })
- ];
- 
 }
