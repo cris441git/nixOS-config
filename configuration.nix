@@ -90,19 +90,6 @@
     term screen-256color
   '';
 
-  services.nginx = {
-  enable = true;
-  virtualHosts."weechat.local" = {
-    locations."/" = {
-      root = pkgs.glowing-bear;
-    };
-    locations."/weechat" = {
-      proxyPass = "http://127.0.0.1:9000/;";
-      proxyWebsockets = true;
-    };
-    };
-  };
-
   ## USER ACCOUNTS
   users.users."cris441" = {
     isNormalUser = true;
