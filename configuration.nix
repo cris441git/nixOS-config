@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./imports/hardening.nix
       ./imports/packages.nix
+      ./imports/custom-pkgs.nix
     ];
 
   ## NIX OPTIONS
