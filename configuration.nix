@@ -10,6 +10,11 @@
 
   ## NIX OPTIONS
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  nixpkgs.config = {
+  problems.handlers = {
+    "gtk+".broken = "warn"; ## Lutris is still requiring gtk2 for some reason
+  };
+};
    
   ## HARDWARE, BOOT AND KERNEL
   hardware.graphics = {
