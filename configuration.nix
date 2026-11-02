@@ -96,6 +96,16 @@
     term screen-256color
   '';
 
+  services.ollama = {
+  enable = true;
+  acceleration = "cuda";
+  host = "127.0.0.1";
+  port = 11434;
+  environmentVariables = {
+    OLLAMA_ORIGINS = "http://localhost:3000,http://127.0.0.1:3000";
+  };
+ };
+
   ## USER ACCOUNTS
   users.users."cris441" = {
     isNormalUser = true;
