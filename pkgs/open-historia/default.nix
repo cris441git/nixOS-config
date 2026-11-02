@@ -51,11 +51,14 @@ buildNpmPackage {
  '') mapAssets;
 
  ## INSTALL
+ ## INSTALL
  installPhase = ''
    runHook preInstall
    mkdir -p $out/lib/open-historia $out/bin
    cp -r . $out/lib/open-historia
    makeWrapper ${lib.getExe nodejs_22} $out/bin/open-historia \
+     --run 'export OH_DATA_DIR="''${OH_DATA_DIR:-''${XDG_DATA_HOME:-$HOME/.local/share}/open-historia}"' \
+     --run 'mkdir -p "$OH_DATA_DIR"' \
      --add-flags $out/lib/open-historia/server/server.js
    runHook postInstall
  '';
