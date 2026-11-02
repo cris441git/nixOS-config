@@ -39,6 +39,7 @@
    vlc
    spotdl
    gajim
+   weechat
    theclicker
    audacious
    vinegar
