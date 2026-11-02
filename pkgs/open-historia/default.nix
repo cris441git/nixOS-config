@@ -51,7 +51,6 @@ buildNpmPackage {
  '') mapAssets;
 
  ## INSTALL
- ## INSTALL
  installPhase = ''
    runHook preInstall
    mkdir -p $out/lib/open-historia $out/bin
