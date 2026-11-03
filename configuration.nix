@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports =
@@ -7,6 +7,7 @@
       ./imports/hardening.nix
       ./imports/packages.nix
       ./imports/custom-pkgs.nix
+      inputs.open-historia.nixosModules.default
     ];
 
   ## NIX OPTIONS
@@ -105,6 +106,8 @@
     OLLAMA_ORIGINS = "http://localhost:3000,http://127.0.0.1:3000";
   };
  };
+
+ services.open-historia.enable = true;
 
   ## USER ACCOUNTS
   users.users."cris441" = {
