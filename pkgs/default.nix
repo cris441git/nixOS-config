@@ -1,7 +1,4 @@
 final: prev: {
- ## GAMES
- open-historia = final.callPackage ./open-historia { };
-
  ## AUDACIOUS PLUGINS
  audacious-discord-rpc = final.callPackage ./audacious-discord-rpc { };
 
