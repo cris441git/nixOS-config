@@ -46,7 +46,6 @@
    theclicker
    audacious
    vinegar
-   open-historia
    rpi-imager
    chromium
    (chromium.override { enableWideVine = true; })
