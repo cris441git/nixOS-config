@@ -12,11 +12,15 @@
 
   ## NIX OPTIONS
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  nix.settings = {
+  max-jobs = "auto";
+  cores = 14;
+};
   nixpkgs.config = {
   problems.handlers = {
     "gtk+".broken = "warn"; ## Lutris is still requiring gtk2 for some reason
   };
-};
+ };
    
   ## HARDWARE, BOOT AND KERNEL
   hardware.graphics = {
@@ -104,6 +108,7 @@
   port = 11434;
   environmentVariables = {
     OLLAMA_ORIGINS = "http://localhost:3000,http://127.0.0.1:3000";
+    OLLAMA_CONTEXT_LENGTH = "131072";
   };
  };
 
