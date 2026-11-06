@@ -5,8 +5,8 @@
  programs.steam.enable = true;
  programs.firefox.enable = false;
  programs.kde-pim.enable = false;
-
  programs.nix-ld.enable = true;
+ programs.ccache.enable = true;
  programs.nix-ld.libraries = with pkgs; [];
 
  ## SYSTEM PACKAGES
@@ -23,6 +23,7 @@
    zenity
    wineWow64Packages.stable
    winetricks
+   #opencode-desktop
    icoutils
    p7zip
    cabextract
@@ -34,6 +35,7 @@
 
  ## USER PACKAGES
  users.users.cris441.packages = with pkgs;  [
+   (chromium.override { enableWideVine = true; })
    vesktop
    lutris
    krita
@@ -48,7 +50,6 @@
    vinegar
    rpi-imager
    chromium
-   (chromium.override { enableWideVine = true; })
    vscodium
    gamescope
    sc-controller
