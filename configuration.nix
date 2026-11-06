@@ -22,6 +22,16 @@
   };
  };
    
+  ## HYDRA SERVER
+  services.hydra = {
+  enable = true;
+  port = 3031;
+  hydraURL = "http://localhost:3031";
+  notificationSender = "hydra@localhost";
+  buildMachinesFiles = [];
+  useSubstitutes = true;
+};
+
   ## HARDWARE, BOOT AND KERNEL
   hardware.graphics = {
     enable = true;
