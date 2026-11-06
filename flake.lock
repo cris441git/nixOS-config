@@ -24,11 +24,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1793530146,
-        "narHash": "sha256-dmCf0qihyhIHTkaG0n19sXsbv2NVZDeIYnZb+vulFkU=",
+        "lastModified": 1793984740,
+        "narHash": "sha256-ZhAzeJVkn4P0SN+CbvwhwWe3rwd/NUBjmYc9P6zkM/k=",
         "owner": "komaruworld",
         "repo": "mocktail",
-        "rev": "c5d24d8f252bcba778bc2a84df6abb26cafe0bb8",
+        "rev": "e70c7ecf4e0ce49187b260740a3415abf1ebe850",
         "type": "github"
       },
       "original": {
@@ -70,6 +70,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1793931523,
+        "narHash": "sha256-kyzSFmRVevj9lr2XVskwKnae/pXJEbQ+bHKc+mpjqFE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7dd597af6a9776394693e4d0fed85dd5ea8d56da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1793540411,
         "narHash": "sha256-fiPJ88izTVucjeo2EQ3jk4aWmLg03I1D4vxnX2QjEgE=",
         "owner": "NixOS",
@@ -84,10 +100,29 @@
         "type": "github"
       }
     },
+    "open-historia": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1793989092,
+        "narHash": "sha256-X3tk0jsp/Ekw5t7rnf0IgkOhxGcOJ40Qh1KM9oTZBhQ=",
+        "owner": "Open-Historia",
+        "repo": "open-historia",
+        "rev": "9a4eda405a91e9f13812880a567a10a2b6ca9da7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Open-Historia",
+        "repo": "open-historia",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "mocktail": "mocktail",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "open-historia": "open-historia"
       }
     }
   },
