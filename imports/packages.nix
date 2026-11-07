@@ -46,7 +46,7 @@
    pkgs.lc0
    pkgs.gnuchess
    pkgs.ghidra
-   pkgs.en-crossaint
+   pkgs.en-croissant
    pkgs.aria2
  ];
 
