@@ -1,5 +1,10 @@
 { config, pkgs, inputs, ...}:
 
+ ## EXTRA PACKAGES
+ let
+  artcraft = inputs.artcraft.packages.${pkgs.stdenv.hostPlatform.system};
+ in
+
 {
  ## ENABLE PROGRAMS
  programs.steam.enable = true;
@@ -10,27 +15,28 @@
  programs.nix-ld.libraries = with pkgs; [];
 
  ## SYSTEM PACKAGES
- environment.systemPackages = with pkgs;  [
-   fastfetch
-   unrar
-   htop
-   ncdu
-   ghc
-   rustup
-   gcc
-   pkg-config
-   python3
-   zenity
-   wineWow64Packages.stable
-   winetricks
-   #opencode-desktop
-   icoutils
-   p7zip
-   cabextract
-   kdePackages.kde-cli-tools
-   git
-   nil
-   aria2
+ environment.systemPackages = [
+   pkgs.fastfetch
+   pkgs.unrar
+   pkgs.htop
+   pkgs.ncdu
+   pkgs.ghc
+   pkgs.rustup
+   pkgs.gcc
+   pkgs.pkg-config
+   pkgs.python3
+   pkgs.zenity
+   pkgs.wineWow64Packages.stable
+   pkgs.winetricks
+   pkgs.opencode-desktop
+   pkgs.icoutils
+   pkgs.p7zip
+   artcraft.default
+   pkgs.cabextract
+   pkgs.kdePackages.kde-cli-tools
+   pkgs.git
+   pkgs.nil
+   pkgs.aria2
  ];
 
  ## USER PACKAGES
