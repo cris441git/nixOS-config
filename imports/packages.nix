@@ -47,6 +47,7 @@
    pkgs.gnuchess
    pkgs.ghidra
    pkgs.pychess
+   pkgs.cutechess
    pkgs.aria2
  ];
 
