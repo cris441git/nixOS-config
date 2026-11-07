@@ -64,6 +64,8 @@
    chromium
    vscodium
    gamescope
+   freetube
+   claude-code
    sc-controller
    protonplus
    papirus-icon-theme
