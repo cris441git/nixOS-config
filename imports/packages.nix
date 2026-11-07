@@ -12,7 +12,13 @@
  programs.kde-pim.enable = false;
  programs.nix-ld.enable = true;
  programs.ccache.enable = true;
+
+ ## COMPATABILITY
  programs.nix-ld.libraries = with pkgs; [];
+ programs.appimage = {
+  enable = true;
+  binfmt = true;
+ };
 
  ## SYSTEM PACKAGES
  environment.systemPackages = [
@@ -36,6 +42,11 @@
    pkgs.kdePackages.kde-cli-tools
    pkgs.git
    pkgs.nil
+   pkgs.stockfish
+   pkgs.lc0
+   pkgs.gnuchess
+   pkgs.ghidra
+   pkgs.pychess
    pkgs.aria2
  ];
 
@@ -58,6 +69,7 @@
    chromium
    vscodium
    gamescope
+   freetube
    sc-controller
    protonplus
    papirus-icon-theme
