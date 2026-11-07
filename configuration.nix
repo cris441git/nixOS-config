@@ -89,7 +89,7 @@
 
   console.keyMap = "pt-latin1";
 
-  services.printing.enable = false;
+  services.printing.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
