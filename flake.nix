@@ -2,6 +2,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
   inputs.mocktail.url = "github:komaruworld/mocktail";
   inputs.open-historia.url = "github:Open-Historia/open-historia";
+  inputs.artcraft.url = "github:Hy4ri/artcraft-flake";
 
   outputs = { self, nixpkgs, mocktail, open-historia, ... }@inputs: {
     nixosConfigurations = {
