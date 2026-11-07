@@ -66,7 +66,6 @@
 
  ## EXCLUDE PACKAGES
  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-   okular
    qrca
    elisa
    kwalletmanager
