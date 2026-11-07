@@ -42,9 +42,6 @@
    pkgs.kdePackages.kde-cli-tools
    pkgs.git
    pkgs.nil
-   pkgs.stockfish
-   pkgs.lc0
-   pkgs.gnuchess
    pkgs.ghidra
    pkgs.en-croissant
    pkgs.aria2
