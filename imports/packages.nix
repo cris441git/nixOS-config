@@ -46,8 +46,7 @@
    pkgs.lc0
    pkgs.gnuchess
    pkgs.ghidra
-   pkgs.pychess
-   pkgs.cutechess
+   pkgs.en-crossaint
    pkgs.aria2
  ];
 
